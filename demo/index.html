@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>jquery.jold.external-hrefs demo</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="style.css" rel="stylesheet">
+        <script src="../jquery.jold.external-links.min.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1>JOLD External Links jQuery plugin demo:</h1>
+            <p>A usage example of External Link plugin. See the sourcecode for more details.</p>
+            <hr>
+            <p>Qui ipsorum lingua Celtae, <a href="https://www.nos.nl" rel="external">NOS (opens in new tab)</a> nostra Galli appellantur. Me non paenitet nullum festiviorem excogitasse ad hoc. Etiam <a href="https://www.rtlnieuws.nl">RTL Nieuws</a> habebis sem dicantur magna mollis euismod. Idque Caesaris facere voluntate liceret: sese habere. Nec dubitamus multa iter quae et nos invenerat.</p>
+        </div>
+
+        <script>
+            (function($){
+                // Open all links with a 'rel="external"' attribute in a new window.
+                $('a[rel="external"]').joldExternalHrefs();
+            })(jQuery);
+        </script>
+
+    </body>
+
+</html>
