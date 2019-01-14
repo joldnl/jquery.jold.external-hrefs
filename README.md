@@ -4,11 +4,11 @@ Version 1.0.0
 
 ## Summary
 
-A jQuery plugin that opens all external links (links that link to another domain / hostname) in a new tab.
+A jQuery plugin that opens all external links (links that link to another domain / hostname) in a new tab
 
 ## Author
 
-Jurgen Oldenburg ( [@staxxnl](http://twitter.com/staxxnl) / [jold.nl](https://www.jold.nl) / [info@jold.nl](info@jold.nl) )
+Jurgen Oldenburg ( [@joldnl](http://twitter.com/joldnl) / [jold.nl](https://www.jold.nl) / [info@jold.nl](info@jold.nl) )
 
 ## Usage
 
