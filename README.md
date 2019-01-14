@@ -43,3 +43,8 @@ A link must always have a `href` attribute to make this plugin function correctl
 #### Version 1.0
 
 * Initial commit.
+
+
+#### Version 1.1
+
+* Only open http and https links in a new window, skip all other protocols.

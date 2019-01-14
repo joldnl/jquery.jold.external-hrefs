@@ -1,6 +1,6 @@
 {
   "name": "jquery.jold.external-hrefs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A jQuery plugin that opens all external links (links that link to another domain / hostname) in a new tab.",
   "main": "gulpfile.js",
   "devDependencies": {},
