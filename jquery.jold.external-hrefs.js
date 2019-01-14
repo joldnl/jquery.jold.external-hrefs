@@ -36,7 +36,19 @@
 
                     event.preventDefault();
                     event.stopPropagation();
-                    window.open(this.href, '_blank');
+
+                    /** Create an url object for the link */
+                    url = new URL(this.href);
+
+                    /**
+                     * Check if the links is a http protocol link
+                     * otherwise just open all other link protocols (tel, mailto)
+                     */
+                    if (url.protocol == 'http:' || url.protocol == 'https:') {
+                        window.open(this.href, '_blank');
+                    } else {
+                        window.location.replace(this.href);
+                    }
 
                 });
             }
