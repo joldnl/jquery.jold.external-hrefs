@@ -26,8 +26,8 @@
 
         $element.each(function() {
 
-            /** Get the current hostname */
-            var a = new RegExp('/' + window.location.host + '/');
+            /** Create url object from link */
+            var link = new URL( this.href );
 
             /** Check if the href attribute of the link has a different hostname than the current site */
             if( !a.test(this.href) ) {
