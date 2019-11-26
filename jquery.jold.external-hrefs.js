@@ -13,8 +13,8 @@
 
     var JoldExternalHrefs = function( element, options ) {
 
-        var obj         = this;
         var $element    = $(element);
+        var hostname    = window.location.host;
 
         /**
          * Pick up the options passed to the plugin
