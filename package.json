@@ -15,14 +15,10 @@
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/joldnl/jquery.jold.external-hrefs",
   "dependencies": {
-    "bach": "^1.2",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0",
     "gulp-concat": "^2.6",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "path": "^0.12"
+    "gulp-uglify": "^3.0.2"
   }
 }
