@@ -29,8 +29,10 @@
             /** Create url object from link */
             var link = new URL( this.href );
 
-            /** Check if the href attribute of the link has a different hostname than the current site */
-            if( !a.test(this.href) ) {
+            /**
+             * Link href host is diffrent from current page url hostname
+             */
+            if( link.host != hostname ) {
 
                 $(this).on('click', function(event) {
 
@@ -38,10 +40,9 @@
                     event.stopPropagation();
 
                     /**
-                     * Check if the links is a http protocol link
-                     * otherwise just open all other link protocols (tel, mailto)
+                     * Only open http links in new tab, skip all other protocols (tel, mailto)
                      */
-                    if (url.protocol == 'http:' || url.protocol == 'https:') {
+                    if (link.protocol == 'http:' || link.protocol == 'https:') {
                         window.open(this.href, '_blank');
                     } else {
                         window.location.replace(this.href);
