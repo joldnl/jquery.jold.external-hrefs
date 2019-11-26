@@ -37,9 +37,6 @@
                     event.preventDefault();
                     event.stopPropagation();
 
-                    /** Create an url object for the link */
-                    url = new URL(this.href);
-
                     /**
                      * Check if the links is a http protocol link
                      * otherwise just open all other link protocols (tel, mailto)
