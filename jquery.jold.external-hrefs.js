@@ -13,47 +13,102 @@
 
     var JoldExternalHrefs = function( element, options ) {
 
-        var obj         = this;
         var $element    = $(element);
+        var hostname    = window.location.host;
 
         /**
          * Pick up the options passed to the plugin
          */
         var settings = $.extend({
-            param: 'defaultValue'
+            'set_target': false,
+            'set_rel': false,
+            'ignore_www': false,
         }, options || {});
-
 
         $element.each(function() {
 
-            /** Get the current hostname */
-            var a = new RegExp('/' + window.location.host + '/');
+            // Create url object from link
+            var link = new URL( this.href );
 
-            /** Check if the href attribute of the link has a different hostname than the current site */
-            if( !a.test(this.href) ) {
+            // Current element jQuery object
+            $elem = $(this);
 
-                $(this).on('click', function(event) {
+            /**
+             * Link href host is diffrent from current page url hostname
+             */
+            if( link.host != hostname ) {
 
-                    event.preventDefault();
-                    event.stopPropagation();
+                // Dont do anything if target="_self"
+                if ($elem.attr('target') !== '_self') {
 
-                    /** Create an url object for the link */
-                    url = new URL(this.href);
-
-                    /**
-                     * Check if the links is a http protocol link
-                     * otherwise just open all other link protocols (tel, mailto)
-                     */
-                    if (url.protocol == 'http:' || url.protocol == 'https:') {
-                        window.open(this.href, '_blank');
-                    } else {
-                        window.location.replace(this.href);
+                    // Set target attribute if setting is true
+                    if (settings.set_target == true) {
+                        setTargetAttribute( $elem );
                     }
 
-                });
+                    // Set rel attribute if setting is true
+                    if (settings.set_rel == true) {
+                        setRelAttribute( $elem );
+                    }
+
+                    // Register click event on <a> and open external link in new tab
+                    $(this).on('click', function(event) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+
+                        /**
+                         * Only open http links in new tab, skip all other protocols (tel, mailto)
+                         */
+                        if (link.protocol == 'http:' || link.protocol == 'https:') {
+                            window.open(this.href, '_blank');
+                        } else {
+                            window.location.replace(this.href);
+                        }
+
+                    });
+
+                }
+
             }
 
         });
+
+
+        /**
+         * Check if element attribute exists
+         * @param   object    $elem  jQuery element
+         * @param   string    attr   Attribute to check
+         * @return  boolean          False|True if attributes exists on the element
+         */
+        function checkElemAttr($elem, attr) {
+            var attribute = $elem.attr(attr);
+            if (typeof attribute !== typeof undefined && attribute !== false) {
+                return true;
+            }
+            return false;
+        }
+
+        /**
+         * Set rel attibute on element if not yet present
+         * @param  object  $elem  jQuery element
+         */
+        function setRelAttribute($elem) {
+            if (!checkElemAttr($elem, 'rel') ) {
+                // if ($elem.attr('target') !== '_self') {}
+                $elem.attr('rel', 'external')
+            }
+        };
+
+        /**
+         * Set target attibute on element if not yet present
+         * @param  object  $elem  jQuery element
+         */
+        function setTargetAttribute($elem) {
+            if (!checkElemAttr($elem, 'target') ) {
+                $elem.attr('target', '_blank')
+            }
+        };
 
     };
 
