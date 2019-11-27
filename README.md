@@ -2,16 +2,16 @@
 
 Version 1.0.0
 
-## Summary
+### Summary
 
 Automatically open all external links (outside of the current site / hostname) in a new tab. 
 Set `<a rel="">` and `<a target="">` attributes dynamically if enabled in settings 
 
 
-### Installation:
+## Installation:
 Install the plugin with npm and include it in your build process, or directly include the files in the head of your page.
 
-**Install with npm (recommended):**
+### Install with npm (recommended):
 
 ```bash
 $ npm i jquery.jold.external-hrefs --save
@@ -21,18 +21,18 @@ $ npm i jquery.jold.external-hrefs --save
 After installing the plugin with npm, you still need to include the downloaded files from node_modules into your workflow.
 
 
-**Include script from cdn:**
+### Include script from cdn:
 
 ```html
 <!-- Include js from jsdelivr cdn -->
-<script src="https://cdn.jsdelivr.net/npm/jquery.jold.js-load-video@1.0.3/jquery.jold.js-load-video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.jold.js-load-video/jquery.jold.js-load-video.min.js"></script>
 
 ```
 
-Just include the script tag in the `<head>` of your page.
+Load the plugin from jsdeliver CDN
 
 
-### Using the plugin
+## Using the plugin
 
 #### Initialize on all links
 
@@ -60,7 +60,7 @@ All `<a>` links with the target attribute set to `target="_self"` are ignored by
 
 This link won't open in a new tab / window.
 
-### Plugin settings
+## Plugin settings
 
 ```js
 $('a').joldExternalHrefs({
@@ -87,11 +87,11 @@ Jurgen Oldenburg ( [@joldnl](http://twitter.com/joldnl) / [jold.nl](https://www.
 
 #### Version 1.2
 
-* Add settings: `set_target`, `set_rel` and `ignore_www`
-* Add attributes rel and target to <a> if settings allow it
-* Dont do anything if target="_self"
-* Update node dependencies, no vulnerabilities anymore
-* Core code improvements
+* NEW - Add settings: `set_target`, `set_rel` and `ignore_www`
+* NEW - Add attributes rel and target to <a> if settings allow it
+* TWEAK - Ignore all links with target="_self" attribute
+* DEV - Update node dependencies, no vulnerabilities anymore
+* DEV - Core code improvements
 
 
 #### Version 1.1
