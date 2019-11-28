@@ -26,7 +26,6 @@ var options = {
         url             : "https://github.com/joldnl/jquery.jold.external-hrefs",
     },
 
-
     // ----- Build task options ----- //
     build : {
         destination : {
@@ -91,7 +90,7 @@ gulp.task( 'watch', function() {
     var watchFiles = options.watch.files();
 
     watchFiles.forEach( function( files, index ) {
-        gulp.watch( files, options.watch.run()[ index ]  );
+        gulp.watch( files, gulp.series(options.watch.run()[ index ])  );
     });
 
 });
