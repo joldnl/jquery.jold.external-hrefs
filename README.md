@@ -1,6 +1,6 @@
 # jQuery JOLD External Hrefs
 
-Version 1.2.0
+Version 1.2.1
 
 ### Summary
 
@@ -83,6 +83,11 @@ $('a').joldExternalHrefs({
 Jurgen Oldenburg ( [@joldnl](http://twitter.com/joldnl) / [jold.nl](https://www.jold.nl) / [info@jold.nl](info@jold.nl) )
 
 ## Changelog
+
+
+#### Version 1.2.1
+
+* Fix - Watch task update to gulp 4
 
 
 #### Version 1.2
