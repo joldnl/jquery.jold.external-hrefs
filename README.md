@@ -1,6 +1,6 @@
 # jQuery JOLD External Hrefs
 
-Version 1.2.3
+Version 1.2.5
 
 ### Summary
 
@@ -85,7 +85,7 @@ Jurgen Oldenburg ( [@joldnl](http://twitter.com/joldnl) / [jold.nl](https://www.
 ## Changelog
 
 
-#### Version 1.2.3
+#### Version 1.2.5
 
 * IMPROVE: Update node npm dependencies
 
