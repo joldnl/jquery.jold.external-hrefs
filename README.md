@@ -85,6 +85,11 @@ Jurgen Oldenburg ( [@joldnl](http://twitter.com/joldnl) / [jold.nl](https://www.
 ## Changelog
 
 
+#### Version 1.2.2
+
+* IMPROVE: Add .npmignore for ignoring .git and node_modules
+
+
 #### Version 1.2.1
 
 * Fix - Watch task update to gulp 4

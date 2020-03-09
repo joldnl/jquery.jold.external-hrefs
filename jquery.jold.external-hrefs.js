@@ -1,5 +1,5 @@
 /*!
- * JOLD jQuery External Links 1.2.1
+ * JOLD jQuery External Links 1.2.2
  *
  * Copyright (c) 2018 JOLD Interactive; Jurgen Oldenburg <info@jold.nl>
  *
